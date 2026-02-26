@@ -1,0 +1,21 @@
+{
+  "filter": {
+    "eq": { "resourceType": "entity.device" }
+  },
+  "select": [
+    {
+      "name": "provision.device.identifier",
+      "fields": [
+        {
+          "field": "value",
+          "alias": "id"
+        },
+        {
+          "field": "date",
+          "alias": "date"
+        }
+      ]
+    }
+  ],
+  "limit": { "size": 25, "start": 1 }
+}
