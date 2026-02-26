@@ -19,7 +19,6 @@ def search_active_devices():
         base_url = base_url.replace("/north/v80", "")
     
     api_key = os.getenv("OPENGATE_API_KEY")
-    organization = os.getenv("OPENGATE_ORGANIZATION")
     
     # Initialize the client
     client = OpenGateClient(api_key=api_key, url=base_url)
@@ -33,13 +32,10 @@ def search_active_devices():
     with open(filter_path, "r") as f:
         search_config = json.load(f)
     
-    print(f"Searching entities in {base_url} (Org: {organization})...")
+    print(f"Searching entities in {base_url}...")
     
     # Create the search builder
     builder = client.new_entities_search_builder()
-    
-    if organization:
-        builder.with_organization_name(organization)
     
     if "filter" in search_config:
         builder.with_filter(search_config["filter"])
