@@ -30,11 +30,10 @@ def search_devices_simple():
         builder = client.new_entities_search_builder()
         
         results_raw = (builder
-            .with_organization_name(organization)
             .with_filter({"eq": {"resourceType": "entity.device"}})
             .with_select([
                 {"name": "provision.device.identifier", "fields": [{"field": "value", "alias": "ID"}]},
-                {"name": "provision.device.name", "fields": [{"field": "value", "alias": "NAME"}]}
+                {"name": "provision.device.administrativeState", "fields": [{"field": "value", "alias": "NAME"}]}
             ])
             .with_limit(10, 1)
             .with_format("dict")
@@ -46,7 +45,7 @@ def search_devices_simple():
         
         print(f"Found {len(entities)} devices.\n")
         for entity in entities:
-            print(f"- ID: {entity.get('ID')}, Name: {entity.get('NAME')}")
+            print(f"- {json.dumps(entity)}")
             
     except Exception as e:
         print(f"Error: {e}")
