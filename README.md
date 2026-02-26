@@ -34,7 +34,6 @@ The project uses `uv` for dependency management.
     ```env
     OPENGATE_API_KEY=your_api_key
     OPENGATE_BASE_URL=https://api.opengate.es
-    OPENGATE_ORGANIZATION=your_organization
     OPENGATE_VERIFY_SSL=False
     ```
 
