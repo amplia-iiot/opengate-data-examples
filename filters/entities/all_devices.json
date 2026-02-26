@@ -8,8 +8,8 @@
       "fields": [{ "field": "value", "alias": "ID" }]
     },
     {
-      "name": "provision.device.name",
-      "fields": [{ "field": "value", "alias": "NAME" }]
+      "name": "provision.device.administrativeState",
+      "fields": [{ "field": "value", "alias": "STATE" }]
     },
     {
       "name": "provision.device.communicationModules[].mobile.imei",
